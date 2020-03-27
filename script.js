@@ -17,6 +17,9 @@ document.forms.nameForm.onsubmit = (e)=>{
                 text = "Не знаю, что придумать отдельно для тебя, Диана, так что вот: "+text
             }
         }
+        if (name==="Илья"){
+            text = "Такая конфетка, я просто таю"
+        }
         response.innerText = text
     }
 }
