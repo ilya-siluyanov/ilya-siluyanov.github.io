@@ -11,6 +11,7 @@ document.forms.nameForm.onsubmit = (e)=>{
     if (name===""){
         response.innerText = "Даже не зная твоего имени, "+text
     }else{
+        text = name
         if(name==="Диана"){
             if (Math.round(Math.random())){
                 text = "Не знаю, что придумать отдельно для тебя, Диана, так что вот: "+text
