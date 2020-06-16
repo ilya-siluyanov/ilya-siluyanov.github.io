@@ -2,7 +2,8 @@ const wordPlace = document.getElementById("wordPlace");
 const lettersContainer = document.getElementById("lettersContainer");
 const resultField = document.getElementById("resultField");
 let wordList = getWordList();
-displayWord(wordList[0]);
+let current = 0;
+displayWord(wordList[current]);
 
 function getWordList() {
     return ["alphA", "bEta", "gaMma"]
@@ -17,12 +18,16 @@ function displayWord(word) {
             button.onclick = () => {
                 resultField.style = "color:red";
                 resultField.innerHTML = "Wrong answer";
-                
+                current = (current+1)%wordList.length;
+                displayWord(wordList[current]);
+
             }
         }else{
             button.onclick = () => {
                 resultField.style = "color:green";
                 resultField.innerHTML = "Correct answer";
+                current = (current+1)%wordList.length;
+                displayWord(wordList[current]);
             }
         }
         lettersContainer.appendChild(button);
